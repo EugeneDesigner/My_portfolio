@@ -43,32 +43,35 @@ class AboutPage extends Component {
   render() {
     return (
       <Layout className={s.content}>
-        <Me className={s.picture}/>
-        <h4 >{title}</h4>
+        <section className={s.intro}>
+          <Me className={s.picture}/>
+          <h4 >{title}</h4>
+        </section>
 
         <section className={s.principles}>
-            <p>My Three Professional Principles:</p>
+            <div className={s.section_title}><p>My Three 'Web Developer' Principles:</p></div>
 
-            <div>
-              <div>Picture 1</div>
-              <div>Make projects fly <s>damn</s> very <span className={s.fast}>fast</span> </div>
+            <div >
+              <div className={s.section_part}><div className={s.circle}></div></div>
+              <div className={s.describe}>Make my work fly <s>damn</s> <span className={s.fast}>fast</span> </div>
             </div>
             <div>
-              <div> Picture 2</div>
-              <div>Make them look <span className={s.great}>great</span> </div>
+              <div className={s.section_part}> Picture 2</div>
+              <div className={s.describe}>Make it look <span className={s.great}>great</span> </div>
             </div>
             <div>
-              <div>Picture 3</div>
-              <div>Guarantee they serve <span className={s.long}>long</span></div>
+              <div className={s.section_part}>Picture 3</div>
+              <div className={s.describe}>Guarantee it serves <span className={s.long}>long</span></div>
             </div>
         </section>
 
         <section className={s.instruments}>
 
-        <p>In order to implement those principles, I use the following instruments:</p>
+        <div className={s.section_title}><p> To implement those principles, I use the following instruments:</p></div>
 
-        <div>
-          <ul>Design:
+        <div className={s.instrument_column}>
+          <div className={s.bubble}></div>
+          <ul className={s.list_left}><span className={s.list_title}>Design</span>
             <li>HTML5 (wow!)</li>
             <li>CSS3 &#38; frameworks(Bootstrap, Foundation)</li>
             <li>Sketch(wireframing)</li>
@@ -77,14 +80,17 @@ class AboutPage extends Component {
           </ul>
         </div>
 
-        <div>
-          <ul>Inside:
-            <li>Javascript</li>
-            <li>ReactJS &#38; Redux(SPA)</li>
-            <li>Node.js(Isomorphic Apps)</li>
+        <div className={s.instrument_column}>
+            <div className={s.bubble}></div>
+          <ul className={s.list_right}><span className={s.list_title}>Engine</span>
+            <li>Javascript (ES6, Typescript)</li>
+            <li>ReactJS &#38; Redux (SPA, Isomorphics Apps)</li>
+            <li>Node.js &#38; Express (REST API, GraphQL)</li>
             <li>Webpack</li>
             <li>Karma, Jasmine, Chai(testing)</li>
+
           </ul>
+
         </div>
 
 
@@ -92,7 +98,7 @@ class AboutPage extends Component {
 
 
         <section className={s.citation}>
-          <p>Web is a world of art, but the the part I love the most about this universe is that it has no limitations,
+          <p>Web is a world of art, but the part I love the most about this universe is that it has no limitations -
                 just small challenges. Next day makes you better, brings you further. Love it!</p>
         </section>
 

@@ -1,6 +1,6 @@
 .content {
 
-  width: 80%;
+  width: 90%;
   font-family: 'Georgia', sans-serif;
 }
 
@@ -11,34 +11,56 @@
 
 
 section {
-  margin-top: 80px;
+  margin-top: 2px;
+  padding: 20px 10px 50px 10px;
+  border-radius: 8px;
   flex: 1;
   flex-basis: 100%;
-
+  min-height: 100vh;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
+  justify-content: space-between;
 
-  p {
+  .section_title {
     flex-basis: 100%;
+    min-height: 60px;
+    p {
+      display: inline-block;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      border-left: 18px solid #E83CE5;
+      background-color: #fff;
+      padding: 10px 30px 15px 6px;
+      position: relative;
+      box-shadow: 5px 6px 15px rgba(0,0,0,0.25);
+    }
   }
 
-  div {
-    flex-basis: 33%;
+}
 
-  }
+.intro {
+  min-height: 80vh;
+  background-color: #f0eceb;
 }
 
 .principles {
+  background-color: #dddfd4;
+  > div:not(:first-child) {
+    width: 31%;
+    text-align: center;
+  }
 
-    div {
-      text-align: center;
-
-    &:first-child {
-        padding: 60px;
+  .section_part {
+    margin-top: 50px;
+    height: 300px;
       }
-    }
 
+  .describe {
+      padding: 15px;
+      background-color: #fff;
+
+    }
     span {
       padding: 4px;
       color: #fff;
@@ -55,23 +77,100 @@ section {
     }
   }
 
-.instruments {
-  display: flex;
-  justify-content: space-between;
-  ul {
-    list-style: none;
 
-  li {
-    padding: 5px 8px;
-  }
+//instruments
+
+.instruments {
+  background-color: #F4F4F4;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+
+
+.section_title p {
+  border-left-color: #6054E8;
+}
+.instrument_column {
+  display: inline-block;
+  min-width: 55%;
+  padding: 20px 0 40px;
+
+  &:nth-child(2n+1) {
+
+    align-self: flex-end;
   }
 }
 
+  .bubble {
+    float: left;
+    background-color: #2badd9;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    -webkit-shape-outside:circle();
+    shape-outside:circle();
+    margin-right: 10px;
+    margin-top: 10px;
+
+
+    }
+    ul {
+      list-style: none;
+
+      .list_title {
+        padding: 8px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        font-size: .7rem;
+        background-color: rgb(46, 204, 113);
+        border-radius: 5px;
+      }
+
+
+    li {
+      padding: 5px 0px;
+
+      &:nth-child(2) {
+        padding-top: 15px;
+      }
+    }
+
+    }
+    .list_right {
+      span {
+        background-color: rgb(52, 152, 219);
+      }
+    }
+
+  }
+
+
 .citation {
+  background-color: #89bdd3;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   p {
+    padding: 10px;
     font-size: 2.5rem;
     line-height: 3rem;
-    
+    text-align:justify;
+    line-height: 3.2rem;
+    color: #fff;
+
+  &:first-letter {
+    font-size: 1.5em;
+    letter-spacing: -.1em;
+    padding-left: 30px;
+    font-weight: 500;
+    color: red;
+  }
+
+
+
 
   }
 }

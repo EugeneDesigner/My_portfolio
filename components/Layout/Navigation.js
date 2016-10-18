@@ -12,7 +12,7 @@ class Navigation extends React.Component {
           <li><Link to="/about">_Who?</Link></li>
 
           <li><Link to="/projects">_What?</Link></li>
-        
+
           <li><Link to="/development">_How?</Link></li>
         </ul>
       </nav>

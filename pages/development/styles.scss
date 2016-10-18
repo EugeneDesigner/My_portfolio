@@ -1,0 +1,31 @@
+.lol {
+  font-size: .6rem;
+  position:relative;
+  display: inline-block;
+  padding:10px;
+  margin:1em 0 3em;
+  color:#000;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius:5px;
+  margin-right:50px;
+  user-select: auto;
+}
+
+.lol:after {
+  content:"";
+  position:absolute;
+  bottom:-15px; /* value = - border-top-width - border-bottom-width */
+  left:50px; /* controls horizontal position */
+  border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
+  border-style:solid;
+  border-color:#000 transparent;
+  display:block;
+  width:0;
+  top:8px; /* controls vertical position */
+ right:-20px; /* value = - border-left-width - border-right-width */
+   bottom:auto;
+   left:auto;
+   border-width:8px 0 8px 20px;
+   border-color:transparent #3fb0ac;
+}

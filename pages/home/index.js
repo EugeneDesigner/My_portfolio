@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import Layout from '../../components/Layout';
-import s from './styles.scss';
+import s from './styles.css';
 
 
-class DevelopmentPage extends React.Component {
+class ProjectsPage extends React.Component {
 
 
 
@@ -12,7 +12,7 @@ class DevelopmentPage extends React.Component {
     return (
       <Layout className={s.content}>
         <div>
-          <div className={s.lol}>eugeneyaroshenko@gmail.com</div>
+          <div>Lol</div>
           <div>Lol</div>
         </div>
 
@@ -22,4 +22,4 @@ class DevelopmentPage extends React.Component {
 
 }
 
-export default DevelopmentPage;
+export default ProjectPage;

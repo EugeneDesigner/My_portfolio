@@ -1,10 +1,11 @@
 .content {
-  width: 80%;
+  width: 90%;
 }
 
 .works {
   margin-top: 70px;
   height: 100vh;
+  max-height: 800px;
   display: flex;
   flex-flow: row;
 
@@ -14,6 +15,8 @@
    position: relative;
    background-size: cover;
    background-position: center;
+
+
 
  p {
   position: absolute;
@@ -27,16 +30,90 @@
   letter-spacing: .2em;
   font-weight: 500;
   color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .1s ease-in-out;
+
  }
+
 
  }
 }
 
 .drafts {
   margin-right: 2px;
+  background-image: url('./jm4.jpg');
   background-image:  linear-gradient(135deg, rgba(73,155,234,1) 0%, rgba(32,124,229,0.4) 100%), url('./jm4.jpg');
 }
 
 .projects {
+  background-image:url('./tree.jpg');
   background-image: linear-gradient(to bottom, rgba(255,0,132,1) 0%, rgba(255,0,132,0.4) 100%), url('./tree.jpg');
+}
+
+
+.drafts:hover p, .projects:hover p {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+//thumbnails
+
+.thumbnails {
+  margin-top: 90px;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+;
+
+
+  & > div {
+    flex: 1 1 auto;
+    display: flex;
+    height: 100vh;
+    max-height: 800px;
+    flex-direction: column;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content:flex-start;
+  }
+}
+
+.photo {
+  flex: 1 1 auto;
+  height: 70%;
+  width: 100%;
+  background-image: url("http://www.zadehdesigns.com/Resources/colours_small.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.description {
+  width: 98%;
+  height: 28%;
+  max-height: 300px;
+  background-color: #4ECDC4;
+  margin-top: 10px;
+  border-radius: 10px;
+
+  ul {
+    padding-top: 10px;
+    list-style: none;
+    font-size: .9rem;
+    line-height: 1.7rem;
+
+    span {
+      font-weight: bold;
+      letter-spacing: .05em;
+      font-size: 1rem;
+
+    }
+  }
 }

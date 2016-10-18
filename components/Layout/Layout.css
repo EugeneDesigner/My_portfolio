@@ -1,9 +1,14 @@
-
+@import '../../public/normalize.css';
 .container {
   display: flex;
   flex-flow: column;
-  height: 100%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+
+}
+
+
+body {
+  background-color: #EFEFEF;
 }
