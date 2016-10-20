@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
+.title {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #FFFBFA;
+  padding-top: 20px;
+  width: 80%;
+  margin-left: 5px;
+
+
+
+}
+
+
+
+
+
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: #3dc463;
+  height: 100vh;
+
+
+
+  .left_column {
+		display: flex;
+    width: 30%;
+		align-items: center;
+		justify-content: center;
+    max-width: 500px;
+
+    background:
+      linear-gradient(45deg, #052254 5px, transparent 0) 0 5px,
+      linear-gradient(135deg, #052254 5px, #3dc463 0) 0 5px;
+    background-color: rgb(31, 38, 59);
+    background-position: right top;
+    background-repeat: repeat-y;
+    background-size: 10px 10px;
+
+  }
+
+
+  .right_column {
+    display: flex;
+    flex-flow: column;
+    width: 70%;
+    max-width: 1200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+
+
+    & > * {
+      @extend .title;
+      flex: 1 auto;
+      max-height: 40px;
+
+
+    }
+
+    .name {
+      margin-top: 100px;
+
+    }
+    .welcome {
+      font-size: 1.7rem;
+      text-transform: lowercase;
+    }
+
+    .follow{
+      font-size: 1.4rem;
+      text-transform: lowercase;
+      margin-top: 40px;
+      text-align: right;
+
+    }
+
+    .arrow {
+      text-align: right;
+      display: inline-block;
+      padding: 0;
+      height: auto;
+      animation: shake 1.5s linear both;
+      transform: translateX(0);
+      animation-iteration-count: infinite;
+    }
+
+
+    .arrow:hover {
+       animation-play-state: paused;
+    }
+
+  }
+}
+
+@keyframes shake {
+    0%, 50%, 100% {
+      transform: translateX(0px);
+    }
+
+    25% {
+      transform: translateX(4px);
+    }
+
+    75% {
+      transform: translateX(-4px);
+    }
+
+  }

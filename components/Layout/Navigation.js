@@ -9,7 +9,7 @@ class Navigation extends React.Component {
     return (
       <nav>
         <ul>
-          <li><Link to="/about">_Who?</Link></li>
+          <li><Link to="/about" >_Who?</Link></li>
 
           <li><Link to="/projects">_What?</Link></li>
 

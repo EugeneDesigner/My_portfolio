@@ -13,10 +13,41 @@ header {
   a {
     color: #000;
   }
-  a:hover {
-    color: #ba9077;
-  }
+
 }
+
+
+
+@keyframes swing
+{
+    15%, 30%
+    {
+        transform: translateX(3px);
+    }
+    30%
+    {
+        transform: translateX(-3px);
+    }
+    50%
+    {
+        transform: translateX(2px);
+    }
+    65%
+    {
+        transform: translateX(-2px);
+    }
+    80%
+    {
+        transform: translateX(1px);
+    }
+    100%
+    {
+        transform: translateX(0);
+    }
+}
+
+
+
 
 .top {
   flex: 1;
@@ -33,15 +64,22 @@ header {
 //left-side column
 .left_side {
   width: 60%;
+  user-select: none;
 
 
   .name_box {
     position: relative;
     width: 150px;
     height: 40px;
+    border-radius: 4px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     line-height: 40px;
     padding-left: 45px;
     border: 1px solid #000;
+    letter-spacing: .2em;
+    font-weight: 600;
+
 
 
   span {
@@ -51,47 +89,50 @@ header {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    border: 1px solid black;
   }
 }
 
 
 }
 
-.middle {
+
+.email {
   width: 140px;
   right: 140px;
   top: 0;
-  font-size: .6rem;
+  text-align: center;
+  font-size: .5rem;
+  font-weight: 600;
   margin-top: 12px;
   position: absolute;
-  display: inline-block;
-  padding:10px;
-  color:#000;
+  padding:10px 2px;
+  color:#345;
   background-color: #fff;
-  border: 1px solid black;
-  border-radius:5px;
-  text-align: right;
+  border-radius:1px;
+  border: .5px solid black;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease-in-out;
 
 }
 
-.middle:after {
-  content:"";
-  position:absolute;
+.active {
+  opacity: 1;
+  visibility: visible;
+}
 
+.email:after {
+  content:"";
+  width: 20px;
+  position:absolute;
   bottom:-15px; /* value = - border-top-width - border-bottom-width */
-  left:50px; /* controls horizontal position */
-  border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
-  border-style:solid;
-  border-color:#000 transparent;
+
+  height: 0.5em;
+  border-bottom: 1px solid black;
   display:block;
-  width:0;
-  top:8px; /* controls vertical position */
- right:-20px; /* value = - border-left-width - border-right-width */
-   bottom:auto;
-   left:auto;
-   border-width:8px 0 8px 20px;
-   border-color:transparent #3fb0ac;
+  top:10px; /* controls vertical position */
+  right:-20px; /* value = - border-left-width - border-right-width */
+
 }
 
 
@@ -117,7 +158,13 @@ header {
         width: 60px;
         text-align: center;
 
+    &:hover svg{
+      animation: swing 1s ease;
+      animation-iteration-count: 1;
+    }
       }
+
+
 
 
 
@@ -131,6 +178,7 @@ header {
   min-width: 100%;
   display: flex;
   flex-flow: row;
+  user-select: none;
   align-items: center;
   justify-content: center;
 
@@ -141,19 +189,29 @@ header {
     ul {
       display: flex;
       flex-flow: row;
+      height: 90px;
       justify-content:center;
       align-items:flex-end;
     }
 
     li {
-      display: inline-block;
+      display: inline;
       text-align: left;
-      padding: 20px 30px;
+
       position: relative;
       font-size: 1.6rem;
       background-color: #E86621;
       width: 30%;
-      clip-path: polygon(0 100%, 90% 100%, 100% 50%, 90% 0, 0 0, 10% 50%);
+
+
+      a {
+        display: block;
+        height: 100%;
+        padding: 20px 30px;
+        transition: all .2s cubic-bezier(.65,.37,.53,.68);
+      }
+
+
 
       &:first-child {
         background-color: #6054E8;
@@ -162,6 +220,9 @@ header {
         background-color: #FF009D;
       }
 
+      a:hover {
+        padding-bottom: 60px;
+      }
 
     }
 

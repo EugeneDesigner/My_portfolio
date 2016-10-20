@@ -1,30 +1,46 @@
-.content {
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
 
-  width: 90%;
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+
+
+
+
+.content {
+  min-height: 100%;
+  width:99%;
   font-family: 'Georgia', sans-serif;
 }
 
 
-.picture, h4 {
+h4 {
   align-self: center;
 }
 
 
 section {
-  margin-top: 2px;
+  margin-top: 10px;
   padding: 20px 10px 50px 10px;
   border-radius: 8px;
   flex: 1;
-  flex-basis: 100%;
-  min-height: 100vh;
+  height: auto;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
   justify-content: space-between;
 
   .section_title {
-    flex-basis: 100%;
-    min-height: 60px;
+    width: 100%;
+    margin-bottom: 30px;
+    height: 60px;
     p {
       display: inline-block;
       font-size: 1.2rem;
@@ -40,17 +56,38 @@ section {
 }
 
 .intro {
-  min-height: 80vh;
-  background-color: #f0eceb;
+  position: relative;
+
+  .title {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    width: 60%;
+    max-width: 600px;
+    padding: 10px 10px 10px 30px;
+    font-size: 1.4rem;
+    color: #1d2120;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    background-color: #fff;
+  }
+
 }
 
 .principles {
   background-color: #dddfd4;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
   > div:not(:first-child) {
-    width: 31%;
     text-align: center;
   }
-
+  .section_title {
+    align-self: flex-start;
+  }
   .section_part {
     margin-top: 50px;
     height: 300px;
@@ -103,7 +140,6 @@ section {
 
   .bubble {
     float: left;
-    background-color: #2badd9;
     width: 180px;
     height: 180px;
     border-radius: 50%;
