@@ -11,7 +11,7 @@ class ProjectsPage extends React.Component {
 
   render() {
     return (
-      <Layout className={s.content}>
+      <div>
         <div className={s.works}>
           <a href="#first" className={s.drafts}><p>Drafts</p></a>
           <a href="#second" className={s.projects}><p>Projects</p></a>
@@ -61,7 +61,7 @@ class ProjectsPage extends React.Component {
 
         </div>
 
-      </Layout>
+      </div>
     );
   }
 

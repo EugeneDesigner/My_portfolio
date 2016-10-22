@@ -1,31 +1,94 @@
-.lol {
-  font-size: .6rem;
-  position:relative;
-  display: inline-block;
-  padding:10px;
-  margin:1em 0 3em;
-  color:#000;
-  background-color: #fff;
-  border: 1px solid black;
-  border-radius:5px;
-  margin-right:50px;
+
+.content {
+  min-height: 100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+}
+.background_line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
 
 }
 
-.lol:after {
-  content:"";
-  position:absolute;
-  bottom:-15px; /* value = - border-top-width - border-bottom-width */
-  left:50px; /* controls horizontal position */
-  border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
-  border-style:solid;
-  border-color:#000 transparent;
-  display:block;
-  width:0;
-  top:8px; /* controls vertical position */
- right:-20px; /* value = - border-left-width - border-right-width */
-   bottom:auto;
-   left:auto;
-   border-width:8px 0 8px 20px;
-   border-color:transparent #3fb0ac;
+
+.building_background {
+  max-width: 800px;
+  padding-top: 100px;
+  overflow: visible;
+
+
+
+}
+//display of the child elements
+.color_background {
+  height: 1000px;
+  flex: 1;
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &:nth-child(2) {
+    height: 300px;
+    background-color: transparent;
+  }
+  &:nth-child(3) {
+    background-color: #2DA5B2;
+  }
+  &:nth-child(4) {
+    background-color: #F1C40F;
+  }
+  &:nth-child(5) {
+    background-color: green;
+  }
+  &:nth-child(6) {
+    background-color: yellow;
+  }
+
+  &:nth-child(7) {
+    display: flex;
+    height: 800px;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: #D1D6ED;
+
+    .cityoutline {
+      width: 70%;
+      min-width: 350px;
+      max-width: 900px;
+    }
+  }
+
+}
+
+//styling inside content of the children components
+.main {
+  flex: 1;
+  width: 60%;
+  max-width: 1200px;
+  height: 100%;
+  align-self: center;
+}
+
+.number {
+  font-size: 8em;
+  top: 0;
+  left: 0;
+  position: absolute;
+  border-left: 15px solid #000;
+  border-bottom: 15px solid #000;
+  padding: 10px 0 10px 20px;
+}
+
+.main_text {
+  font-size: 6em;
+  transform: rotate(90deg);
 }

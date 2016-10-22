@@ -1,15 +1,3 @@
-/**
- * React Static Boilerplate
- * https://github.com/kriasoft/react-static-boilerplate
- *
- * Copyright © 2015-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
-/* eslint-disable global-require */
-
 const path = require('path');
 const webpack = require('webpack');
 const AssetsPlugin = require('assets-webpack-plugin');
@@ -31,7 +19,7 @@ const config = {
   // The base directory for resolving the entry option
   context: __dirname,
 
-  // The entry point for the bundle
+
   entry: [
     './main.js',
   ],
@@ -128,20 +116,7 @@ const config = {
       },
       {
         test: /\.json$/,
-        exclude: [
-          path.resolve(__dirname, './routes.json'),
-        ],
         loader: 'json-loader',
-      },
-      {
-        test: /\.json$/,
-        include: [
-          path.resolve(__dirname, './routes.json'),
-        ],
-        loaders: [
-          `babel-loader?${JSON.stringify(babelConfig)}`,
-          path.resolve(__dirname, './utils/routes-loader.js'),
-        ],
       },
       {
         test: /\.md$/,

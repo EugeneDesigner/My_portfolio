@@ -2,7 +2,7 @@
 
 .title {
   display: inline-block;
-  font-size: 2.5rem;
+  font-size: 2em;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   text-transform: uppercase;
@@ -19,7 +19,7 @@
 
 
 
-
+//main display
 .main {
   display: flex;
   flex-direction: row;
@@ -35,10 +35,6 @@
 		align-items: center;
 		justify-content: center;
     max-width: 500px;
-
-    background:
-      linear-gradient(45deg, #052254 5px, transparent 0) 0 5px,
-      linear-gradient(135deg, #052254 5px, #3dc463 0) 0 5px;
     background-color: rgb(31, 38, 59);
     background-position: right top;
     background-repeat: repeat-y;
@@ -53,53 +49,68 @@
     width: 70%;
     max-width: 1200px;
     display: flex;
+    padding-left: 30px;
     align-items: flex-start;
     justify-content: center;
 
-
-
-    & > * {
-      @extend .title;
-      flex: 1 auto;
-      max-height: 40px;
-
-
+    > * {
+      flex: 1;
+      max-width: 500px;
+      max-height: 30px;
     }
 
+  }
+}
+//components
+
+
+
     .name {
-      margin-top: 100px;
+      @extend .title;
+      margin-top: 20px;
 
     }
     .welcome {
-      font-size: 1.7rem;
+      @extend .title;
+      font-size: 1.5em;
       text-transform: lowercase;
     }
 
     .follow{
-      font-size: 1.4rem;
+      @extend .title;
+      font-size: 1.2em;
       text-transform: lowercase;
-      margin-top: 40px;
+      margin-top: 70px;
       text-align: right;
 
     }
 
     .arrow {
+      @extend .title;
       text-align: right;
       display: inline-block;
       padding: 0;
       height: auto;
-      animation: shake 1.5s linear both;
-      transform: translateX(0);
-      animation-iteration-count: infinite;
+
+          a {
+            cursor: pointer;
+            padding-top: 15px;
+            color: #fff;
+            display: inline-block;
+            animation: shake 1.3s linear both;
+            transform: translateX(0);
+            animation-iteration-count: infinite;
+          }
+          a:active, a:focus {
+            color: currentColor;
+          }
+
+          a:hover {
+            animation-play-state: paused;
+          }
     }
 
 
-    .arrow:hover {
-       animation-play-state: paused;
-    }
-
-  }
-}
 
 @keyframes shake {
     0%, 50%, 100% {
@@ -115,3 +126,37 @@
     }
 
   }
+
+
+@media all and (max-width: 550px) {
+  body {
+    font-size: 70%;
+  }
+  .main {
+    flex-direction: column;
+    height: 100%;
+
+    .left_column, .right_column {
+      width: 100%;
+      max-width: 100%;
+      height: 100vh;
+    }
+
+    .right_column {
+      padding-top: 50px;
+      line-height: 2em;
+      align-items: center;
+      justify-content:flex-start;
+
+       * {
+        text-align:center;
+        padding: 2px;
+        margin: 0;
+
+        max-height: 20%;
+        align-self: center;
+
+      }
+    }
+  }
+}

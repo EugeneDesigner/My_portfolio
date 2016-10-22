@@ -3,8 +3,9 @@ html {
 }
 header {
   width: 90%;
+  max-width: 1200px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-self: center;
   overflow: hidden;
   background-color: #e3e3e3;
@@ -55,7 +56,7 @@ header {
   padding-top: 5px;
   background-color: #fff;
   display: flex;
-  flex-flow: row;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 50px;
@@ -63,11 +64,11 @@ header {
 
 //left-side column
 .left_side {
-  width: 60%;
+  max-width: 30%;
   user-select: none;
 
-
-  .name_box {
+}
+.name_box {
     position: relative;
     width: 150px;
     height: 40px;
@@ -82,18 +83,17 @@ header {
 
 
 
-  span {
-    width: 40px;
-    position: absolute;
-    height: 44px;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    span {
+      width: 40px;
+      position: absolute;
+      height: 44px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
-}
 
 
-}
 
 
 .email {
@@ -101,7 +101,7 @@ header {
   right: 140px;
   top: 0;
   text-align: center;
-  font-size: .5rem;
+  font-size: .5em;
   font-weight: 600;
   margin-top: 12px;
   position: absolute;
@@ -125,20 +125,19 @@ header {
   content:"";
   width: 20px;
   position:absolute;
-  bottom:-15px; /* value = - border-top-width - border-bottom-width */
-
+  bottom:-15px;
   height: 0.5em;
   border-bottom: 1px solid black;
   display:block;
-  top:10px; /* controls vertical position */
-  right:-20px; /* value = - border-left-width - border-right-width */
+  top:10px;
+  right:-20px;
 
 }
 
 
 //right-side column
 .right_side {
-  width: 40%;
+  flex: 1;
   text-align: right;
   display: flex;
   flex-direction: row;
@@ -148,7 +147,7 @@ header {
 
 
   ul {
-     width: 50%;
+     width: 80%;
      list-style-type: none;
      position: relative;
 
@@ -173,22 +172,23 @@ header {
   }
 
 .navigate {
-  margin-top: 15px;
+
   flex: 1;
   min-width: 100%;
   display: flex;
-  flex-flow: row;
+  flex-direction: row;
   user-select: none;
   align-items: center;
   justify-content: center;
 
   nav {
     width: 100%;
+    margin-top: 15px;
     border-radius: 20px;
 
     ul {
+
       display: flex;
-      flex-flow: row;
       height: 90px;
       justify-content:center;
       align-items:flex-end;
@@ -197,11 +197,11 @@ header {
     li {
       display: inline;
       text-align: left;
-
       position: relative;
-      font-size: 1.6rem;
+      font-size: 1.6em;
       background-color: #E86621;
       width: 30%;
+
 
 
       a {
@@ -209,10 +209,13 @@ header {
         height: 100%;
         padding: 20px 30px;
         transition: all .2s cubic-bezier(.65,.37,.53,.68);
+
+
       }
 
-
-
+      a:hover {
+        padding-bottom: 60px;
+      }
       &:first-child {
         background-color: #6054E8;
       }
@@ -220,11 +223,9 @@ header {
         background-color: #FF009D;
       }
 
-      a:hover {
-        padding-bottom: 60px;
-      }
-
     }
+
+
 
 
   }
@@ -236,4 +237,42 @@ header {
       cursor: pointer;
     }
 
+  }
+
+
+  @media all and (max-width: 550px) {
+    .left_side {
+      max-width: 5%;
     }
+    .name_box {
+      width: 0;
+      border: none;
+      text-indent: 100%;
+      overflow: hidden;
+
+    }
+    .navigate {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    .navigate nav ul {
+      flex-direction: column;
+      list-style-type: none;
+      padding: 0;
+      height: auto;
+
+    }
+
+    .navigate nav ul li {
+      display: list-item;
+      width: 100%;
+
+    a {
+      padding: 20px;
+    }
+    a:hover {
+      padding-bottom: 20px;
+    }
+
+  }
+}

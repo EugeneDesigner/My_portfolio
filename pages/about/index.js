@@ -2,14 +2,12 @@
 import React, { Component } from 'react';
 import Layout from '../../components/Layout';
 import s from './styles.scss';
-import { title } from './index.md';
 import Icon from '../../components/Layout/Icon';
 import cx from 'classnames';
 
 
 const Background = () => (
-  <svg width="1200px"
-	 height="500.061px" viewBox="0 0 1200 500.061" enable-background="new 0 0 1200 500.061" >
+  <svg width="100%" height="100%" viewBox="0 0 1200 500.061" enable-background="new 0 0 1200 500.061" >
 <g >
 	<linearGradient  id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="860.4221" y1="-2.3174" x2="798.4221" y2="91.6826">
 		<stop  offset="0" stopColor="#DFE7E5" />
@@ -285,17 +283,18 @@ class AboutPage extends Component {
 
   render() {
     return (
-      <Layout className={s.content}>
-        <section className={s.intro}>
-          <Background/>
-          <h4 className={s.title}>I am a Web Developer, Artist, Human :-)</h4>
+      <div className={s.content}>
+        <section className={cx(s.content_part, s.intro)}>
+        <h4 className={s.title}>I am a Web Developer, Artist, Human :-)</h4>
+          <div className={s.background}><Background size="100%" /></div>
+
         </section>
 
-        <section className={s.principles}>
+        <section className={cx(s.content_part, s.principles)}>
             <div className={s.section_title}><p>My Three 'Web Developer' Principles:</p></div>
 
             <div >
-              <div className={s.section_part}><Icon size="100%" viewBox="0 0 360 360" icon="lego1"/></div>
+              <div className={ s.section_part}><Icon size="100%" viewBox="0 0 360 360" icon="lego1"/></div>
               <div className={s.describe}>Make my work fly <s>damn</s> <span className={s.fast}>fast</span> </div>
             </div>
             <div>
@@ -308,7 +307,7 @@ class AboutPage extends Component {
             </div>
         </section>
 
-        <section className={s.instruments}>
+        <section className={cx(s.content_part, s.instruments)}>
 
         <div className={s.section_title}><p> To implement those principles, I use the following instruments:</p></div>
 
@@ -340,13 +339,13 @@ class AboutPage extends Component {
         </section>
 
 
-        <section className={s.citation}>
+        <section className={cx(s.content_part, s.citation)}>
           <p>Web is a world of art, but the part I love the most about this universe is that it has no limitations -
                 just small challenges. Next day makes you better, brings you further. Love it!</p>
         </section>
 
 
-      </Layout>
+      </div>
     );
   }
 

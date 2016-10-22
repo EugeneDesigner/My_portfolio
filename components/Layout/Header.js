@@ -38,7 +38,7 @@ class Header extends React.Component {
             <span>eugeneyaroshenko@gmail.com</span>
           </p>
             <div className={s.left_side}>
-              <div className={s.name_box}><span><Icon viewBox='0 0 40 40' size="100%" icon="logoS"/></span>Eugene</div>
+              <div className={s.name_box}><span><Icon className={s.icon} viewBox='0 0 40 40' size="100%" icon="logoS"/></span>Eugene</div>
             </div>
 
             <div className={s.right_side}>
