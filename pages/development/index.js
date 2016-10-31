@@ -383,7 +383,7 @@ class DevelopmentPage extends React.Component {
 
       <section className={cx(s.color_background, s.skies)}>
         <article className={s.main}>
-        <Background viewBox=" 0 1255.187 1415.22"
+        <Background viewBox="0 0 1255.187 1415.22"
                 height="auto"
                 width="100%"
                 background="sky"/>
@@ -435,12 +435,13 @@ class DevelopmentPage extends React.Component {
                   width="100%"
                   background="computer"/></div>
           <div className={s.main_text}>Coding</div>
+          </article>
           <blockquote>
           The first 90% of the code accounts for the first 90% of the development time.
           The remaining 10% of the code accounts for the other 90% of the development time.
             <cite>Tom Cargill</cite>
           </blockquote>
-        </article>
+
       </section>
 
       <section className={cx(s.color_background, s.finish)}>
