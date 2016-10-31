@@ -22,13 +22,19 @@
 
 }
 
-
+.first_background {
+  position: relative;
+}
 
 .lift {
   position: absolute;
-  left: 40%;
-  top: 50%;
-  z-index: 3;
+  left: 48%;
+  transform: translateX(-48%);
+  transition: position 1s linear;
+  z-index: 10;
+
+
+
 
 }
 
@@ -64,10 +70,7 @@
     background: linear-gradient(to top left, #1A2980 , #26D0CE);
 
   }
-  .bulb {
-    background-image: url('./brick_background.jpg');
-    background-size: cover;
-  }
+
   .wireframing {
     background-color: #F1C40F;
   }

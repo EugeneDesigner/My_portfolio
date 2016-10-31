@@ -28,7 +28,7 @@ class Header extends React.Component {
 
     if (scrollTop >= 500) {
       menu.style.display = 'block';
-      menu.style.opacity = 0.7;
+      menu.style.opacity = 0.5;
     } else {
       menu.style.display = 'none';
       menu.style.opacity = 0;
@@ -44,7 +44,7 @@ class Header extends React.Component {
       if (e.type == 'mouseover') {
         menu.style.opacity = 1;
       } else {
-        menu.style.opacity = 0.7;
+        menu.style.opacity = 0.5;
       }
     }
 

@@ -24,7 +24,7 @@ class Navigation extends React.Component {
     return (
       <nav>
         <ul>
-          <li> <a href="#top" onClick={this.scrollTop}><Icon viewBox='0 0 20 20' size="60px" icon="letter"/></a></li>
+          <li> <a href="#top" onClick={this.scrollTop}><Icon viewBox='0 0 20 20' size="40px" icon="letter"/></a></li>
           <li><NavLink to="/portfolio/about" >_Who?</NavLink></li>
 
           <li><NavLink to="/portfolio/projects">_What?</NavLink></li>
