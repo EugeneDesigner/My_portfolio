@@ -1,116 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+@import '../../style/_variables.scss';
 
-.title {
-  display: inline-block;
-  font-size: 2em;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #FFFBFA;
-  padding-top: 20px;
-  width: 80%;
-  margin-left: 5px;
-
-
-
-}
-
-
-
-
-//main display
-.main {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  background-color: #3dc463;
-  height: 100vh;
-
-
-
-  .left_column {
-		display: flex;
-    width: 30%;
-		align-items: center;
-		justify-content: center;
-    max-width: 500px;
-    background-color: rgb(31, 38, 59);
-    background-position: right top;
-    background-repeat: repeat-y;
-    background-size: 10px 10px;
-
-  }
-
-
-  .right_column {
-    display: flex;
-    flex-flow: column;
-    width: 70%;
-    max-width: 1200px;
-    display: flex;
-    padding-left: 30px;
-    align-items: flex-start;
-    justify-content: center;
-
-    > * {
-      flex: 1;
-      max-width: 500px;
-      max-height: 30px;
-    }
-
-  }
-}
-//components
-
-
-
-    .name {
-      @extend .title;
-      margin-top: 20px;
-
-    }
-    .welcome {
-      @extend .title;
-      font-size: 1.5em;
-      text-transform: lowercase;
-    }
-
-    .follow{
-      @extend .title;
-      font-size: 1.2em;
-      text-transform: lowercase;
-      margin-top: 70px;
-      text-align: right;
-
-    }
-
-    .arrow {
-      @extend .title;
-      text-align: right;
-      display: inline-block;
-      padding: 0;
-      height: auto;
-
-          a {
-            cursor: pointer;
-            padding-top: 15px;
-            color: #fff;
-            display: inline-block;
-            animation: shake 1.3s linear both;
-            transform: translateX(0);
-            animation-iteration-count: infinite;
-          }
-          a:active, a:focus {
-            color: currentColor;
-          }
-
-          a:hover {
-            animation-play-state: paused;
-          }
-    }
-
-
+//***********KEYFRAMES***********
 
 @keyframes shake {
     0%, 50%, 100% {
@@ -127,8 +17,106 @@
 
   }
 
+//*******************************
 
-@media all and (max-width: 550px) {
+//shared text style
+.title {
+  display: inline-block;
+  font-family: $fontINTRO;
+  letter-spacing: 0.2em;
+  font-size: $text-large;
+  color: #000;
+  padding-top: 20px;
+  width: 100%;
+  margin-left: 5px;
+}
+
+//main display
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100vh;
+  background-color: #fefdff;
+
+
+
+  .main__leftcolumn {
+		display: flex;
+    min-width: 60%;
+		align-items:flex-end;
+		justify-content: flex-end;
+    background-color: rgb(31, 38, 59);
+
+  }
+
+  .main__leftcolumn__logo {
+    height: 40%;
+    width: 500px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+
+  }
+
+
+  .main__rightcolumn {
+    display: flex;
+    flex-flow: column;
+
+    max-width: 1200px;
+    display: flex;
+    padding-left: 30px;
+    align-items: flex-start;
+    justify-content: center;
+
+    > *:not(:last-child) {
+      flex: 1;
+      max-width: 500px;
+      max-height: 30px;
+      margin-bottom: 55px;
+      @extend .title;
+      text-align: center;
+
+    }
+    .main__rightcolumn__welcome, .main__rightcolumn__follow {
+      font-size: 1.3em;
+    }
+  }
+}
+//components
+
+    .main__rightcolumn__enter {
+      text-align: center;
+      width: 100%;
+      display: inline-block;
+      padding: 0;
+      height: auto;
+      margin-top: 30px;
+
+          a {
+            cursor: pointer;
+            padding-top: 15px;
+            color: #000;
+            display: inline-block;
+            animation: shake 1.5s linear both;
+            transform: translateX(0);
+            animation-iteration-count: infinite;
+          }
+
+
+          a:hover {
+            animation-play-state: paused;
+          }
+    }
+
+
+
+
+
+
+@media all and (max-width: 950px) {
   body {
     font-size: 70%;
   }
@@ -136,23 +124,21 @@
     flex-direction: column;
     height: 100%;
 
-    .left_column, .right_column {
+    .main__leftcolumn, .main__rightcolumn {
       width: 100%;
       max-width: 100%;
-      height: 100vh;
+      height: 50vh;
     }
 
-    .right_column {
-      padding-top: 50px;
+    .main__rightcolumn {
+      padding-top: 10px;
       line-height: 2em;
       align-items: center;
       justify-content:flex-start;
 
        * {
-        text-align:center;
         padding: 2px;
         margin: 0;
-
         max-height: 20%;
         align-self: center;
 

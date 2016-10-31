@@ -11,55 +11,37 @@ class ProjectsPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={s.content}>
         <div className={s.works}>
-          <a href="#first" className={s.drafts}><p>Drafts</p></a>
-          <a href="#second" className={s.projects}><p>Projects</p></a>
+          <p>Below are some of my works I've done throughout the past year.
+             Feel free to look around, try them out. I hope you will like them.
+             And yeah, I would be happy to answer all your questions, just
+             throw me a message via the links provided above</p>
         </div>
 
 
         <div className={s.thumbnails}>
-          <div>
-              <div className={s.photo}></div>
-              <div className={s.description}>
-                <ul>
-                  <li><span>Title</span>: Travel website </li>
-                  <li><span>Used technologies</span>: HTML/CSS, Jade, Bootstrap, </li>
-                  <li><span>Description</span>: Update of the travel site to make visitors more engaged
-                      with the 'emotion of travelling'</li>
-                </ul>
-
-              </div>
-          </div>
-
-          <div>
-            <div className={s.photo}></div>
-            <div className={s.description}>
-              <ul>
-                <li><span>Title</span>: Travel website </li>
-                <li><span>Used technologies</span>: HTML/CSS, Jade, Bootstrap, </li>
-                <li><span>Description</span>: Update of the travel site to make visitors more engaged
-                    with the 'emotion of travelling'</li>
-              </ul>
-
-            </div>
-          </div>
-
-          <div>
-            <div className={s.photo}></div>
-            <div className={s.description}>
-              <ul>
-                <li><span>Title</span>: Travel website </li>
-                <li><span>Used technologies</span>: HTML/CSS, Jade, Bootstrap, </li>
-                <li><span>Description</span>: Update of the travel site to make visitors more engaged
-                    with the 'emotion of travelling'</li>
-              </ul>
-
-            </div>
-          </div>
-
-
-        </div>
+          <div className={s.thumbnails__column} id="a"><div className={s['thumbnails__column--slide']}>
+                <h3>Design</h3>
+                <p>Aquaria Vattenmuseum</p>
+          </div></div>
+          <div className={s.thumbnails__column} id="b"><div className={s['thumbnails__column--slide']}>
+                <h3>Website</h3>
+                <p>Aquaria Vattenmuseum</p>
+          </div></div>
+          <div className={s.thumbnails__column} id="c"><div className={s['thumbnails__column--slide']}>
+                <h3>API</h3>
+                <p>Aquaria Vattenmuseum</p>
+          </div></div>
+          <div className={s.thumbnails__column} id="d"><div className={s['thumbnails__column--slide']}>
+                <h3>Art</h3>
+                <p>Aquaria Vattenmuseum</p>
+          </div></div>
+          <div className={s.thumbnails__column} id="e"><div className={s['thumbnails__column--slide']}>
+                <h3>Icons</h3>
+                <p>Aquaria Vattenmuseum</p>
+          </div></div>
+       </div>
 
       </div>
     );

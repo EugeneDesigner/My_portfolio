@@ -26,7 +26,7 @@ import routes from './core/router';
 const container = document.getElementById('container');
 
 const component = (
-  <Router history ={browserHistory}>
+  <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
       {routes}
   </Router>
 )

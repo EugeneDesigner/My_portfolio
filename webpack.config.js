@@ -79,7 +79,8 @@ const config = {
           path.resolve(__dirname, './components'),
           path.resolve(__dirname, './core'),
           path.resolve(__dirname, './pages'),
-          path.resolve(__dirname, './main.js'),
+          path.resolve(__dirname, './main'),
+          path.resolve(__dirname, './public')
         ],
         loader: `babel-loader?${JSON.stringify(babelConfig)}`,
       },
@@ -100,6 +101,11 @@ const config = {
       },
       {
         test: /\.scss/,
+        include: [
+          path.resolve(__dirname, './components'),
+          path.resolve(__dirname, './pages'),
+          path.resolve(__dirname, './core'),
+        ],
         loaders: [
           'style-loader',
           `css-loader?${JSON.stringify({
