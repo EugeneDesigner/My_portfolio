@@ -61,7 +61,8 @@ class Header extends React.Component {
         <div className={s.top} >
 
             <div className={s.top__left__side}>
-              <div className={s.icon__box}><Icon className={s.icon} viewBox='0 0 20 20' size="100%" icon="letter"/></div>
+              <div className={s['icon__box']}><Icon className={s.icon} viewBox='0 0 20 20' size="100%" icon="letter"/></div>
+              <div className={s['icon__box']}><Icon className={s.icon} viewBox='0 0 20 20' size="100%" icon="letter-white"/></div>
             </div>
 
             <div className={s.top__right__side}>

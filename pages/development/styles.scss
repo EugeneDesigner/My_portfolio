@@ -8,7 +8,22 @@
   }
 }
 
+@keyframes changeColor {
+  0% {
+    background-color: #F1A9A0;
+  }
+  50% {
+    background-color: #D2527F;
+  }
 
+}
+
+
+.computer__background, .design__draw,
+.wireframing__responsive, .skies__background,
+.loop, .text, .sunset__text {
+  z-index: 10;
+}
 
 .content {
   min-height: 100%;
@@ -50,7 +65,7 @@
 
 //display of the child elements
 .color_background {
-  min-height: 1000px;
+  min-height: 1300px;
   height: 100%;
   flex: 1;
   display: flex;
@@ -74,10 +89,10 @@
   .wireframing {
     background-color: #F1C40F;
   }
-  .draw {
+  .design {
     background-color: #41537F;
   }
-  .comp {
+  .computer {
     background-color: #29B5ED;
   }
   .finish {
@@ -92,10 +107,9 @@
 .main {
   flex: 1;
   width: 100%;
-  height: 70%;
-
   position: relative;
   display: flex;
+  flex-direction: column;
 
 }
 
@@ -127,7 +141,7 @@
   .main {
     height: 100%;
     overflow: hidden;
-    align-items: flex-start;
+
     justify-content: flex-start;
   }
 }
@@ -163,6 +177,7 @@
 .wireframing {
 
   .main {
+    justify-content: center;
     align-items: center;
 
   }
@@ -171,8 +186,8 @@
       color: #F1C40F;
   }
 
-  .responsive {
-
+  .wireframing__responsive {
+    max-height: 60%;
     width: 100%;
   }
 
@@ -181,31 +196,33 @@
 
 }
 
-.draw {
+.design {
   .main {
     align-items: center;
+    justify-content: center;
   }
 
-  .design {
+  .design__draw {
     padding: 20px;
     width: 100%;
-    height: 80%;
+    max-height: 80%;
 
 
   }
 }
 
-.comp {
+.computer {
   .main {
     align-items: center;
+    justify-content: center;
     padding-top: 40px;
   }
   .main_text:first-letter {
       color: #29B5ED;
   }
-    .computer {
+    .computer__background {
         width: 100%;
-        height: 70%;
+        max-height: 70%;
     }
     blockquote {
 
@@ -253,7 +270,7 @@
     align-items: center;
     justify-content: center;
   }
-  .finish_title {
+  .finish__title {
     padding: 30px;
 
   }
@@ -303,23 +320,53 @@
     background: url('./sunset-01.svg') no-repeat bottom center scroll;
     background-size: cover;
 
+
+    .sunset__text {
+      font-size: 2.5em;
+      display: inline-block;
+      position: absolute;
+      line-height: 2em;
+      bottom: 30%;
+      transform: translateY(-50%);
+      padding: 20px;
+      background-color: rgba(255, 255, 255, .5);
+
+      span {
+        padding: inherit;
+        color: #fff;
+        letter-spacing: .1em;
+        animation: changeColor .8s ease-out infinite;
+        background-color: #F1A9A0;
+      }
+
+    }
   }
 
 
+  @media screen and (max-width: 1000px) {
+    .color_background {
+      min-height: 800px;
+      height: 100%;
+    }
+    .computer blockquote {
+      font-size: $text-large;
+    }
+  }
   @media screen and (max-width: 700px) {
     .color_background {
       min-height: 600px;
+      max-height: 600px;
     }
 
     .main_text {
       font-size: 3em;
     }
 
-    .comp blockquote {
+    .computer blockquote {
       font-size: $text-middle;
-      width: 60%;
+      width: 70%;
       bottom: 20px;
-      right: -20px;
+      right: -50px;
 
       :before {
         left: -10px;
