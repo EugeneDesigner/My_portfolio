@@ -12,11 +12,10 @@ const babelConfig = Object.assign({}, pkg.babel, {
 });
 const autoprefixer = require('autoprefixer');
 
-// Webpack configuration (main.js => public/dist/main.{hash}.js)
-// http://webpack.github.io/docs/configuration.html
+
 const config = {
 
-  // The base directory for resolving the entry option
+
   context: __dirname,
 
 
@@ -36,11 +35,10 @@ const config = {
   // Switch loaders to debug or release mode
   debug: isDebug,
 
-  // Developer tool to enhance debugging, source maps
-  // http://webpack.github.io/docs/configuration.html#devtool
+
   devtool: isDebug ? 'source-map' : false,
 
-  // What information should be printed to the console
+
   stats: {
     colors: true,
     reasons: isDebug,
@@ -53,15 +51,14 @@ const config = {
     cachedAssets: isVerbose,
   },
 
-  // The list of plugins for Webpack compiler
+
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': isDebug ? '"development"' : '"production"',
       __DEV__: isDebug,
     }),
-    // Emit a JSON file with assets paths
-    // https://github.com/sporto/assets-webpack-plugin#options
+
     new AssetsPlugin({
       path: path.resolve(__dirname, './public/dist'),
       filename: 'assets.json',
@@ -72,6 +69,12 @@ const config = {
   // Options affecting the normal modules
   module: {
     loaders: [
+
+      {
+        test: /.*/,
+        include: [path.resolve(__dirname, 'pages/*')],
+        loader: 'bundle?lazy&name=page'
+      },
       {
         test: /\.jsx?$/,
         include: [

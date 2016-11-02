@@ -45,19 +45,91 @@
   justify-content: center;
 }
 
-.thumbnails__column {
+.thumbnails > * {
   flex: 1 1 49%;
-  position: relative;
-  box-sizing: border-box;
   max-width: 50%;
   min-width: 300px;
-  height: 500px;
   margin: 10px 4px;
+}
+
+.thumbnails__column {
+  position: relative;
+  box-sizing: border-box;
   color: #171e42;
-  background-color: #D2D7D3;
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
   border-radius: 2px;
   box-shadow: 0.4px 0.4px 0px 0px rgba(0,0,0,0.75);
   overflow: hidden;
+    height: 500px;
+}
+
+.thumbnails__column:first-child {
+  background-image:url('../../public/img/1-01.png');
+}
+
+.thumbnails__column:nth-child(3) {
+  background-image:url('../../public/img/country.png');
+}
+
+.thumbnails__column:nth-child(5) {
+  background-image:url('../../public/img/soundcloud.png');
+
+  .thumbnails__column--slide {
+    background-color: rgba(150, 20, 120, .7);
+    span {
+      display: inline-block;
+      transform: scale(1, -1);
+    }
+  }
+
+}
+.thumbnails__column:nth-child(7) {
+  background-image:url('../../public/img/colourful.png');
+
+  .thumbnails__column--slide {
+    background-color: rgba(0, 0, 0, .4);
+
+  }
+
+}
+
+
+
+
+.thumbnails__description {
+    height: 300px;
+    padding-left: 15px;
+  h1, h2 {
+    display: inline-block;
+    margin: 20px 0 0;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+  a {
+    color: #000;
+  }
+
+  .thumbnails__description__result {
+    padding: 15px;
+    display: inline-block;
+    margin-top: 40px;
+    border: 2px solid black;
+    letter-spacing: .1em;
+    font-weight: 600;
+    font-size: $text-middle;
+    text-transform: uppercase;
+    font-family: $fontINTRO;
+    transition: all .2s cubic-bezier(.65,.37,.53,.68);
+
+
+    &:hover {
+      background-color: #212323;
+      color: #0bffff;
+    }
+  }
 }
 
 
@@ -69,7 +141,7 @@
   right: -100%;
   width: 100%;
   height: 100%;
-  background-color: rgba(219, 10, 91, 0.5);
+  background-color: rgba(40, 128, 185, 0.7);
 	transition-property: all;
 	transition-duration: .8s;
 	transition-timing-function: cubic-bezier(0, 1, .5, 1);

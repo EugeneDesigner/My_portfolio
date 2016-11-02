@@ -8,15 +8,24 @@ import Intro from '../pages/intro/index';
 import Projects from '../pages/projects/index';
 
 
+const isReactComponent = (obj) => Boolean(obj && obj.prototype && Boolean(obj.prototype.isReactComponent));
+const component = (component) => {
+  return isReactComponent(component)
+    ? {component}
+    : {getComponent: (loc, cb)=> component(
+         comp=> cb(null, comp.default || comp))}
+};
+
+
   export default (
     <Route path='/'>
     <IndexRoute component={Intro} />
-    <Route component={Layout} path='/portfolio'>
-      <Route component={About} path='/portfolio/about'/>
-      <Route component={Development} path='/portfolio/development'/>
-      <Route component={Projects} path='/portfolio/projects'/>
+      <Route {...component(Layout)} path='/portfolio'>
+      <Route {...component(About)} path='/portfolio/about'/>
+      <Route {...component(Development)} path='/portfolio/development'/>
+      <Route {...component(Projects)} path='/portfolio/projects'/>
     </Route>
-    <Route component={NotFound} path="*"/>
+    <Route {...component(NotFound)} path="*"/>
     </Route>
 
   );
